@@ -2,71 +2,82 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>澤田陸斗 - Portfolio</title>
+  <title>Rick Sawa - Portfolio</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.6; margin: 2em auto; max-width: 800px; padding: 0 1em; }
-    h1, h2, h3 { color: #007acc; }
-    .section { margin-top: 2em; }
-    .project { margin-bottom: 1em; }
     body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fc;
-  color: #333;
-  line-height: 1.7;
-  margin: 2em auto;
-  max-width: 800px;
-  padding: 0 2em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  background: #ffffff;
-}
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.7;
+      margin: 2em auto;
+      max-width: 800px;
+      padding: 0 2em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      background: #ffffff;
+    }
 
-h1 {
-  color: #007acc;
-  text-align: center;
-}
+    h1 {
+      color: #007acc;
+      text-align: center;
+    }
 
-h2 {
-  color: #333;
-  border-bottom: 2px solid #007acc;
-  padding-bottom: 5px;
-  margin-top: 40px;
-}
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
 
-img {
-  display: block;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    img.profile {
+      display: block;
+      margin: 0 auto 20px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.section {
-  margin-top: 2em;
-}
+    img.full-width {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
 
-ul {
-  list-style-type: disc;
-  padding-left: 1.5em;
-}
+    .section {
+      margin-top: 2em;
+    }
 
-li {
-  margin-bottom: 0.5em;
-}
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5em;
+    }
 
+    li {
+      margin-bottom: 0.5em;
+    }
   </style>
 </head>
 <body>
 
   <h1>Rick Sawa</h1>
-  <p>東京工業大学大学院 システム制御系 修士課程在籍。<br>
-  数理モデリング・信号処理・シミュレーション・機械学習・統計解析に関心を持ち、医療画像や産業システム分野での応用を志向。</p>
+  <img src="me.jpg" alt="プロフィール画像" class="profile">
+  <p style="text-align: center;">
+    東京工業大学大学院 システム制御系 修士課程在籍。<br>
+    数理モデリング・信号処理・シミュレーション・機械学習・統計解析に関心を持ち、医療画像や産業システム分野での応用を志向。
+  </p>
 
   <div class="section">
     <h2>📘 研究内容</h2>
     <p><strong>テーマ：</strong>フォトンカウンティングCTにおける電子発生の時空間推定（逆問題解析）</p>
     <ul>
-      <li>CdTe半導体内の電子輸送の数値解析</li>
-      <li>TSVD・L1正則化を用いたスパース推定による発生時間・量の復元</li>
+      <li>CdTe半導体中のキャリア（電子）のドリフト・拡散過程を、移流拡散方程式により数値シミュレーション</li>
+      <li>観測される電流波形（量子化済み）から、キャリアの発生位置・時刻・量を推定するスパース推定手法を開発</li>
+      <li>TSVD（特異値分解の打ち切り）により安定化を図り、さらにL1正則化で多重イベントの識別精度を向上</li>
+      <li>発生時刻が既知の場合において、機械学習（ランダムフォレスト）を用いて、発生位置と発生量の推定モデルを構築</li>
+      <li>今後は、より現実的な境界条件・電子の拡がり・電場モデルを取り入れ、リアルタイム処理や未知位置の推定にも展開予定</li>
     </ul>
   </div>
 
@@ -74,28 +85,31 @@ li {
     <h2>🧪 プロジェクト・インターン</h2>
 
     <div class="project">
-      <h3>BETA CAE Systems</h3>
+      <h3>BETA CAE Systems（ギリシャ・長期インターン）</h3>
       <ul>
-        <li>モンテカルロシミュレーションの分散評価ツールの実装</li>
-        <li>計算速度改善（ベクトル化＋並列処理）、メモリリーク対策</li>
-        <li>ユーザーの利便性を向上させるための新たな機能を提案・実装</li>
-        <li>英語での社内プレゼンテーション</li>
+        <li>半年間、現地のエンジニアと共同で数値解析プロジェクトに従事</li>
+        <li>車両の振動音響特性をモンテカルロ法で解析し、シミュレーション結果と実測値との比較に基づき、応答の尤もらしさを評価する機能を新規提案・実装</li>
+        <li>コードのベクトル化・並列処理により計算速度を高速化、メモリリークの問題を解決</li>
+        <li>異文化コミュニケーションの壁を乗り越える工夫（専門用語の事前準備、話す比率のルール化など）を実践</li>
       </ul>
+      <img src="intern.jpg" alt="ギリシャでのインターンの様子" class="full-width">
     </div>
 
     <div class="project">
       <h3>エムスリー株式会社（データサイエンスインターン）</h3>
       <ul>
-        <li>アンケートデータを用いた医師のクラスタ分析と薬剤訴求戦略の立案</li>
-        <li>マーケティング施策提案：属性別セグメントと有効打ち手の提示</li>
+        <li>アンケートデータを基に医師をクラスタリングし、花粉症領域における薬剤Aの訴求戦略を立案</li>
+        <li>医師の処方方針・価値観・情報感度などから、3〜5群の代表的セグメントを抽出</li>
+        <li>各セグメントに対して最適な特徴訴求方法を提案し、製薬企業の営業支援施策としてまとめ、プレゼンを実施</li>
       </ul>
     </div>
 
     <div class="project">
       <h3>ToDoアプリ開発（Flask × SQLite）</h3>
       <ul>
-        <li>Python＋Flaskを用いたシンプルなタスク管理アプリを開発</li>
-        <li>今後、完了状態・期限付き管理・認証機能などへ拡張予定</li>
+        <li>PythonとFlaskを使って、タスクの追加・削除・完了を管理できるWebアプリを開発</li>
+        <li>ローカル環境での開発から、Git/GitHubを用いたデプロイ、GitHub Pagesによる公開まで実施</li>
+        <li>今後はログイン機能・期限付きタスク・見た目の強化（Tailwind導入など）を予定</li>
       </ul>
     </div>
   </div>
@@ -107,7 +121,7 @@ li {
       <li><strong>ツール：</strong>VS Code, Git, GitHub, Jupyter Notebook</li>
       <li><strong>統計：</strong>カーネル密度推定、L1正則化、主成分分析、独立成分分析</li>
       <li><strong>機械学習：</strong>ランダムフォレスト、クラスタリング、教師あり学習</li>
-      <li><strong>英語：</strong>国際インターン経験</li>
+      <li><strong>英語：</strong>国際インターン経験、英語ミーティング・発表経験あり</li>
     </ul>
   </div>
 
