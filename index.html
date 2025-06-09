@@ -2,136 +2,235 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>澤田 陸斗 - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rikuto Sawada - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* --- 全体のスタイル設定 --- */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f9fc;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f4f6f9;
       color: #333;
-      line-height: 1.7;
-      margin: 2em auto;
-      max-width: 800px;
-      padding: 0 2em;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
-      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
     }
 
-    h1 {
-      color: #007acc;
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* --- ヘッダー --- */
+    header {
       text-align: center;
+      margin-bottom: 50px;
     }
 
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0;
+      color: #2c3e50;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #3498db;
+      margin-top: 5px;
+    }
+
+    /* --- セクションタイトル --- */
     h2 {
-      color: #333;
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 5px;
-      margin-top: 40px;
+      font-size: 2em;
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
     }
 
-    img.profile {
-      display: block;
-      margin: 0 auto 20px;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* --- カードレイアウト --- */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
 
-    img.full-width {
-      display: block;
-      width: 100%;
-      margin-top: 10px;
+    .card {
+      background-color: #ffffff;
       border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .section {
-      margin-top: 2em;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+    
+    .card h3 {
+      font-size: 1.4em;
+      color: #3498db;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .card strong {
+        color: #2c3e50;
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5em;
+    .card ul {
+      padding-left: 20px;
+      margin: 0;
     }
 
-    li {
-      margin-bottom: 0.5em;
+    .card li {
+        margin-bottom: 10px;
     }
+
+    /* --- スキルセクション --- */
+    .skills-section {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .skills-grid h4 {
+        margin-bottom: 10px;
+        color: #3498db;
+    }
+    
+    .skills-grid ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* --- その他セクション --- */
+    .misc-section .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>Rikuto Sawada</h1>
-  <img src="me.jpg" alt="プロフィール画像" class="profile">
-  <p style="text-align: center;">
-    東京工業大学大学院 システム制御系 修士課程在籍。<br>
-    数理モデリング・信号処理・シミュレーション・機械学習・統計解析に関心を持ち、医療や産業システム分野での応用を志向。
-  </p>
+  <div class="container">
 
-  <div class="section">
-    <h2>📘 修士研究</h2>
-    <p><strong>テーマ：</strong>フォトンカウンティングCTにおける逆問題解析</p>
-    <ul>
-      <li>フォトンカウンティング検出器における問題点（Pulse Pileup）を逆問題のアプローチで解決</li>
-      <li>半導体中の電子の挙動を数理モデリング化、シミュレーションを作成</li>
-      <li>ノイズの多い測定データから、スパース推定を用いて、本来観測できない現象を推定</li>
-      <li>研究成果は年内の国際学会および国内学会で発表予定</li>
-    </ul>
-  </div>
+    <header>
+      <h1>澤田 陸斗</h1>
+      <p>数理モデリングとソフトウェア開発で課題を解決する大学院生</p>
+      </header>
 
-  <div class="section">
-    <h2>📘 学士研究</h2>
-    <p><strong>テーマ：</strong>コンプライアントメカニズムを用いた画像ひずみ手法の開発</p>
-    <ul>
-      <li>コンプライアントメカニズムを用いて表面のひずみを増幅させる機構を開発</li>
-      <li>増幅されたひずみをテンプレートマッチングを用いた画像処理で計算</li>
-      <li>実験とシミュレーションを比較し手法の精度の妥当性を確認</li>
-    </ul>
-  </div>
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p>
+        東京工業大学大学院で、フォトンカウンティングCTにおける逆問題を研究しています。数理モデリングとシミュレーションを基盤とし、スパース推定などの統計的手法を用いて観測データから本質を捉えるアプローチに注力してきました。ギリシャでのソフトウェア開発インターンシップでは、統計学の知識を活かしてシミュレーションの評価指標を提案・実装するなど、理論を実践に繋げる経験を積みました。研究や開発で培った論理的思考力と実装能力を活かし、将来的にはデータサイエンティストやシステム開発の領域で貢献したいと考えています。
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>🧪 プロジェクト・インターン</h2>
+    <section class="experience-section">
+        <h2>Experience & Research</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>修士研究</h3>
+                <p><strong>テーマ：</strong>フォトンカウンティングCTにおける逆問題解析</p>
+                <ul>
+                    <li>パルスパイルアップ現象を逆問題として定式化し、高精度な信号分離を目指す。</li>
+                    <li>ドリフト拡散方程式で電子移動をモデル化し、数値シミュレーションを構築。</li>
+                    <li>スパース推定を用いることで、ノイズの多い観測データからの高精度な信号推定を実現。</li>
+                </ul>
+            </div>
 
-    <div class="project">
-      <h3>BETA CAE Systems</h3>
-      <ul>
-        <li>ギリシャでの半年間の長期インターンシップに参加</li>
-        <li>Software developerとしてシミュレーションのポストプロセスに関する新機能を開発</li>
-        <li>データ圧縮、並列計算を用いて高速で処理を行う工夫を適用</li>
-        <li>統計的処理に関する新機能を自ら提案、追加で実装</li>
-        <li>社内会議で新機能に関する英語プレゼンテーションを実施</li>
-      </ul>
-      <img src="intern.jpg" alt="ギリシャでのインターンの様子" width="300" height="400">
-    </div>
+            <div class="card">
+                <h3>BETA CAE Systems (Internship)</h3>
+                <p><strong>役割：</strong>ソフトウェアデベロッパー (ギリシャ, 6ヶ月)</p>
+                <ul>
+                    <li>モンテカルロシミュレーションの不確実性評価指標を提案・開発。</li>
+                    <li>データ圧縮と並列計算を用いたポストプロセス機能の高速化に貢献。</li>
+                    <li>日常的に英語を用いた会議や開発業務、新機能に関するプレゼンテーションを遂行。</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>学士研究</h3>
+                <p><strong>テーマ：</strong>コンプライアントメカニズムを用いた画像ひずみ手法の開発</p>
+                <ul>
+                    <li>弾性変形する機構を用いて微小な表面ひずみを増幅させる手法を開発。</li>
+                    <li>画像処理（テンプレートマッチング）によりひずみを定量的に算出。</li>
+                    <li>シミュレーションと実験結果を比較し、手法の妥当性を検証。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <h4>Languages</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Frameworks & Libraries</h4>
+                <ul>
+                    <li>Flask, NumPy, scikit-learn</li>
+                    <li>Matplotlib, Pandas</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Tools & Platforms</h4>
+                <ul>
+                    <li>Git, GitHub, VS Code</li>
+                    <li>Jupyter Notebook</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Concepts & Methods</h4>
+                <ul>
+                    <li>統計学 (スパース推定, etc.)</li>
+                    <li>機械学習 (クラスタリング, etc.)</li>
+                    <li>数理モデリング, 逆問題</li>
+                    <li>シミュレーション</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Language</h4>
+                <ul>
+                    <li>日本語 (ネイティブ)</li>
+                    <li>英語 (ビジネスレベル)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>エムスリー株式会社</h3>
-      <ul>
-        <li>データサイエンティストとして製薬会社向けの戦略立案を実施</li>
-        <li>医師データをクラスター分析することで、効果的に新薬を販売する方法を提案</li>
-      </ul>
-    </div>
+    <section class="misc-section">
+        <h2>Activities & Awards</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>課外活動：ドッジボール</h3>
+                <p>大学チームのアシスタントとして、試合データ（選手の動き、投球コース等）の収集・分析を担当。データに基づいた戦略立案に貢献しました。</p>
+            </div>
+            <div class="card">
+                <h3>受賞歴</h3>
+                <p>科学の甲子園 山梨県大会 優勝</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>ToDoアプリ開発（Flask × SQLite）</h3>
-      <ul>
-        <li>PythonとFlaskを使って、タスクの追加・削除・完了を管理できるWebアプリを開発</li>
-        <li>ローカル環境での開発から、Git/GitHubを用いたデプロイ、GitHub Pagesによる公開まで実施</li>
-        <li>今後はログイン機能・期限付きタスク・見た目の強化（Tailwind導入など）を予定</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>📂 スキルセット</h2>
-    <ul>
-      <li><strong>言語：</strong>Python（Flask, NumPy, scikit-learn, matplotlib）</li>
-      <li><strong>ツール：</strong>VS Code, Git, GitHub, Jupyter Notebook</li>
-      <li><strong>統計：</strong>カーネル密度推定、L1正則化、主成分分析、独立成分分析</li>
-      <li><strong>機械学習：</strong>ランダムフォレスト、クラスタリング、教師あり学習</li>
-      <li><strong>英語：</strong>国際インターン経験、英語ミーティング・発表経験あり</li>
-    </ul>
   </div>
 
 </body>
