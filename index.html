@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #2980b9; /* 少し落ち着いた青 */
+      --primary-color: #2980b9; /* 落ち着いた青 */
       --secondary-color: #2c3e50; /* 濃いグレー */
       --bg-color: #f8f9fa;
       --card-bg-color: #ffffff;
@@ -32,7 +32,7 @@
       padding: 20px;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-weight: 700;
       color: var(--secondary-color);
     }
@@ -117,8 +117,8 @@
         color: var(--secondary-color);
     }
 
-    /* --- Project Section (for videos/images) --- */
-    .project-grid {
+    /* --- Project/Creations Section --- */
+    .creations-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
@@ -140,6 +140,27 @@
         height: 100%;
         border: none;
     }
+    
+    /* --- Skills Section --- */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    .skills-grid h4 {
+        font-size: 1.2em;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+    .skills-grid ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .skills-grid li {
+        margin-bottom: 8px;
+    }
+
   </style>
 </head>
 <body>
@@ -178,12 +199,21 @@
                     </p>
                 </div>
             </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>学士研究：コンプライアントメカニズムを用いた画像ひずみ手法の開発</h3>
+                    <p>
+                        学士研究では、物体に加わった微小な力を、画像で捉えられるレベルまで大きく増幅する機構（コンプライアントメカニズム）の開発に取り組みました。この機構によって増幅された表面のひずみを、テンプレートマッチングという画像処理技術を用いて非接触で精密に計測する手法を確立。シミュレーションによる理論値と実験値を比較することで、開発した手法の妥当性を証明しました。
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
+    <section id="creations">
+        <h2>制作物 (Creations)</h2>
+        <div class="creations-grid">
             <div class="card">
                 <div class="video-container">
                     </div>
@@ -210,7 +240,57 @@
             </div>
         </div>
     </section>
+    
+    <section id="skills">
+        <h2>スキルセット (Skills)</h2>
+        <div class="card">
+            <div class="card-content">
+                <div class="skills-grid">
+                    <div>
+                        <h4>言語</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>フレームワーク & ライブラリ</h4>
+                        <ul>
+                            <li>NumPy, Pandas, scikit-learn</li>
+                            <li>Matplotlib, Seaborn</li>
+                            <li>Flask</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>ツール & プラットフォーム</h4>
+                        <ul>
+                            <li>Git, GitHub</li>
+                            <li>Jupyter Notebook, VS Code</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>知識 & 手法</h4>
+                        <ul>
+                            <li>数理モデリング, 逆問題</li>
+                            <li>統計解析 (スパース推定 etc.)</li>
+                            <li>機械学習 (クラスタリング etc.)</li>
+                            <li>シミュレーション</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4>語学</h4>
+                        <ul>
+                            <li>日本語 (ネイティブ)</li>
+                            <li>英語 (ビジネスレベル)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+  </div>
 </body>
 </html>
