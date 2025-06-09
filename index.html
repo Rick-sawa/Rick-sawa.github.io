@@ -6,157 +6,140 @@
   <title>Rikuto Sawada - Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* --- 全体のスタイル設定 --- */
+    :root {
+      --primary-color: #2980b9; /* 少し落ち着いた青 */
+      --secondary-color: #2c3e50; /* 濃いグレー */
+      --bg-color: #f8f9fa;
+      --card-bg-color: #ffffff;
+      --text-color: #34495e;
+    }
+
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding: 0;
-      line-height: 1.8;
+      line-height: 1.9;
+      font-weight: 400;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 50px auto;
       padding: 20px;
     }
 
-    /* --- ヘッダー (プロフィール写真対応) --- */
+    h1, h2, h3 {
+      font-weight: 700;
+      color: var(--secondary-color);
+    }
+    
+    h2 {
+      font-size: 2.2em;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-color);
+      margin: 15px auto 0;
+    }
+
+    /* --- Header --- */
     header {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 50px;
-      text-align: center;
+      margin-bottom: 80px;
     }
 
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      border: 3px solid #fff;
-    }
-
-    .header-text h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #2c3e50;
-    }
-
-    .header-text p {
-      font-size: 1.2em;
-      color: #3498db;
-      margin: 5px 0 0 0;
-    }
-
-    @media (min-width: 600px) {
-      header {
-        text-align: left;
-        justify-content: flex-start;
-      }
-    }
-
-
-    /* --- セクションタイトル --- */
-    h2 {
-      font-size: 2em;
-      color: #2c3e50;
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-
-    /* --- カードレイアウト (写真対応) --- */
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden; /* 画像の角を丸めるため */
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 4px solid var(--card-bg-color);
+      margin-bottom: 20px;
     }
     
-    .card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    header h1 {
+      font-size: 3.2em;
+      margin: 0;
+    }
+
+    /* --- Section & Card Layout --- */
+    section {
+        margin-bottom: 80px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .card {
+      background-color: var(--card-bg-color);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
     }
 
     .card-content {
-      padding: 25px;
-      flex-grow: 1;
+      padding: 30px;
     }
-    
+
     .card-content h3 {
-      font-size: 1.4em;
-      color: #3498db;
+      font-size: 1.6em;
       margin-top: 0;
       margin-bottom: 15px;
+      color: var(--primary-color);
     }
     
     .card-content strong {
-      color: #2c3e50;
+        font-weight: 500;
+        color: var(--secondary-color);
     }
 
-    .card-content ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-
-    .card-content li {
-      margin-bottom: 10px;
-    }
-
-    /* --- スキルセクション --- */
-    .skills-section {
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-    
-    .skills-grid {
+    /* --- Project Section (for videos/images) --- */
+    .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .skills-grid h4 {
-        margin-bottom: 10px;
-        color: #3498db;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
     }
     
-    .skills-grid ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    /* --- その他セクション --- */
-    .misc-section .card-content {
-        padding: 25px;
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background-color: #000;
     }
 
-
+    .video-container iframe,
+    .card-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
   </style>
 </head>
 <body>
@@ -165,85 +148,69 @@
 
     <header>
       <img src="me.jpg" alt="プロフィール写真" class="profile-img">
-      <div class="header-text">
-        <h1>澤田 陸斗</h1>
-        <p>数理モデリングとソフトウェア開発で課題を解決する大学院生</p>
-      </div>
+      <h1>澤田 陸斗</h1>
     </header>
 
-    <section class="about-section">
+    <section id="about">
       <h2>About Me</h2>
-      <p>
-        東京工業大学大学院で、フォトンカウンティングCTにおける逆問題を研究しています。数理モデリングとシミュレーションを基盤とし、スパース推定などの統計的手法を用いて観測データから本質を捉えるアプローチに注力してきました。ギリシャでのソフトウェア開発インターンシップでは、統計学の知識を活かしてシミュレーションの評価指標を提案・実装するなど、理論を実践に繋げる経験を積みました。研究や開発で培った論理的思考力と実装能力を活かし、将来的にはデータサイエンティストやシステム開発の領域で貢献したいと考えています。
+      <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
+        東京工業大学大学院にて、フォトンカウンティングCTにおける逆問題を研究しています。数理モデリングとシミュレーションを基盤とし、スパース推定などの統計的手法を用いて観測データから本質を捉えるアプローチに注力してきました。ギリシャでのソフトウェア開発インターンシップでは、統計学の知識を活かしてシミュレーションの評価指標を提案・実装するなど、理論を実践に繋げる経験を積みました。研究や開発で培った論理的思考力と実装能力を活かし、将来的にはデータサイエンティストやシステム開発の領域で貢献したいと考えています。
       </p>
     </section>
 
-    <section class="experience-section">
+    <section id="experience">
         <h2>Experience & Research</h2>
-        <div class="card-container">
+        <div class="card-grid">
             <div class="card">
-                <img src="your-research-image.png" alt="修士研究のイメージ図" class="card-img">
                 <div class="card-content">
-                    <h3>修士研究</h3>
-                    <p><strong>テーマ：</strong>フォトンカウンティングCTにおける逆問題解析</p>
-                    <ul>
-                        <li>パルスパイルアップ現象を逆問題として定式化し、高精度な信号分離を目指す。</li>
-                        <li>ドリフト拡散方程式で電子移動をモデル化し、数値シミュレーションを構築。</li>
-                        <li>スパース推定を用いることで、ノイズの多い観測データからの高精度な信号推定を実現。</li>
-                    </ul>
+                    <h3>修士研究：フォトンカウンティングCTにおける逆問題解析</h3>
+                    <p>
+                        次世代の医療用CTとして期待されるフォトンカウンティング検出器には、短時間に複数の光子が同時に入射すると一つの光子として誤計測してしまう「パルスパイルアップ」という課題があります。私はこの現象を逆問題として捉え、観測された信号から真の光子情報を復元する研究に取り組んでいます。半導体内の電子の挙動をドリフト拡散方程式でモデル化し、シミュレーションを構築。ノイズを含む計測データからスパース推定という統計的手法を用いて、本来観測できない現象を高精度に推定することに成功しました。
+                    </p>
                 </div>
             </div>
 
             <div class="card">
-                <img src="intern.jpg" alt="インターンシップの様子" class="card-img">
                 <div class="card-content">
-                    <h3>BETA CAE Systems (Internship)</h3>
-                    <p><strong>役割：</strong>ソフトウェアデベロッパー (ギリシャ, 6ヶ月)</p>
-                    <ul>
-                        <li>モンテカルロシミュレーションの不確実性評価指標を提案・開発。</li>
-                        <li>データ圧縮と並列計算を用いたポストプロセス機能の高速化に貢献。</li>
-                        <li>日常的に英語を用いた会議や開発業務、新機能に関するプレゼンテーションを遂行。</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="card">
-                 <img src="your-bachelor-research-image.png" alt="学士研究のイメージ図" class="card-img">
-                <div class="card-content">
-                    <h3>学士研究</h3>
-                    <p><strong>テーマ：</strong>コンプライアントメカニズムを用いた画像ひずみ手法の開発</p>
-                    <ul>
-                        <li>弾性変形する機構を用いて微小な表面ひずみを増幅させる手法を開発。</li>
-                        <li>画像処理（テンプレートマッチング）によりひずみを定量的に算出。</li>
-                        <li>シミュレーションと実験結果を比較し、手法の妥当性を検証。</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="skills-section">
-      </section>
-
-    <section class="misc-section">
-        <h2>Activities & Awards</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-content">
-                    <h3>課外活動：ドッジボール</h3>
-                    <p>大学チームのアシスタントとして、試合データ（選手の動き、投球コース等）の収集・分析を担当。データに基づいた戦略立案に貢献しました。</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3>受賞歴</h3>
-                    <p>科学の甲子園 山梨県大会 優勝</p>
+                    <h3>ソフトウェアデベロッパー (BETA CAE Systems, ギリシャ)</h3>
+                    <p>
+                        自動車などのシミュレーションソフトウェアを開発するBETA CAE Systemsにて、半年にわたる長期インターンシップを経験しました。担当したのは、モンテカルロシミュレーションのポストプロセスに関する新機能開発です。統計学の知見を活かし、シミュレーション結果の不確実性を評価する新たな指標を自ら提案・実装しました。また、データ圧縮や並列計算技術を用いて処理の高速化にも貢献し、日常的に英語での会議やプレゼンテーションをこなすことで、グローバルな開発環境における実践的なスキルを習得しました。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-  </div>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <div class="video-container">
+                    </div>
+                <div class="card-content">
+                    <h3>画像認識仕分けロボット</h3>
+                    <p>ライントレース（線に沿って進む）機能に加え、カメラで捉えた犬または猫の画像を識別し、アームでそれぞれの場所に仕分けるロボットを制作しました。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="video-container">
+                    </div>
+                <div class="card-content">
+                    <h3>二輪倒立振子ロボット</h3>
+                    <p>ジャイロセンサーとモーターエンコーダーからの情報をもとに、倒立振子のモデルを構築。安定して自立走行するための制御システムを設計・実装しました。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="video-container">
+                    </div>
+                <div class="card-content">
+                    <h3>科学の甲子園：ジャイロ二輪ロボット</h3>
+                    <p>科学の甲子園山梨県大会で優勝した際に製作した、ジャイロ効果を利用して姿勢を安定させる特殊な二輪ロボットです。自律走行で課題達成を目指しました。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    </div>
 </body>
 </html>
