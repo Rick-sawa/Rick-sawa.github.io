@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #2980b9; /* 落ち着いた青 */
-      --secondary-color: #2c3e50; /* 濃いグレー */
+      --primary-color: #2980b9;
+      --secondary-color: #2c3e50;
       --bg-color: #f8f9fa;
       --card-bg-color: #ffffff;
       --text-color: #34495e;
@@ -117,18 +117,18 @@
         color: var(--secondary-color);
     }
 
-    /* --- Project/Creations Section --- */
-    .creations-grid {
+    /* --- Media Containers (for video/image) --- */
+    .creations-grid, .experience-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
     }
-    
+
     .video-container {
         position: relative;
         width: 100%;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        background-color: #000;
+        padding-top: 75%; /* 4:3 Aspect Ratio for varied images */
+        background-color: #e9ecef;
     }
 
     .video-container iframe,
@@ -139,6 +139,7 @@
         width: 100%;
         height: 100%;
         border: none;
+        object-fit: cover; /* 画像がコンテナにフィットするように調整 */
     }
     
     /* --- Skills Section --- */
@@ -181,30 +182,39 @@
 
     <section id="experience">
         <h2>Experience & Research</h2>
-        <div class="card-grid">
+        <div class="experience-grid">
             <div class="card">
+                <div class="video-container">
+                    <img src="shusi.png" alt="修士研究のイメージ" class="card-img">
+                </div>
                 <div class="card-content">
-                    <h3>修士研究：フォトンカウンティングCTにおける逆問題解析</h3>
+                    <h3>修士研究：フォトンカウンティングCT</h3>
                     <p>
-                        次世代の医療用CTとして期待されるフォトンカウンティング検出器には、短時間に複数の光子が同時に入射すると一つの光子として誤計測してしまう「パルスパイルアップ」という課題があります。私はこの現象を逆問題として捉え、観測された信号から真の光子情報を復元する研究に取り組んでいます。半導体内の電子の挙動をドリフト拡散方程式でモデル化し、シミュレーションを構築。ノイズを含む計測データからスパース推定という統計的手法を用いて、本来観測できない現象を高精度に推定することに成功しました。
+                        次世代CTの課題「パルスパイルアップ」を逆問題として捉え、観測信号から真の光子情報を復元する研究に取り組んでいます。ドリフト拡散方程式で電子挙動をモデル化し、スパース推定を用いて高精度な信号推定に成功しました。
                     </p>
                 </div>
             </div>
 
             <div class="card">
+                <div class="video-container">
+                    <img src="intern.jpg" alt="BETA CAE Systemsでのインターンシップ" class="card-img">
+                </div>
                 <div class="card-content">
-                    <h3>ソフトウェアデベロッパー (BETA CAE Systems, ギリシャ)</h3>
+                    <h3>ソフトウェアデベロッパー (BETA CAE Systems)</h3>
                     <p>
-                        自動車などのシミュレーションソフトウェアを開発するBETA CAE Systemsにて、半年にわたる長期インターンシップを経験しました。担当したのは、モンテカルロシミュレーションのポストプロセスに関する新機能開発です。統計学の知見を活かし、シミュレーション結果の不確実性を評価する新たな指標を自ら提案・実装しました。また、データ圧縮や並列計算技術を用いて処理の高速化にも貢献し、日常的に英語での会議やプレゼンテーションをこなすことで、グローバルな開発環境における実践的なスキルを習得しました。
+                        ギリシャにて半年の長期インターンを経験。統計知見を活かしシミュレーションの不確実性評価指標を提案・実装。英語環境下で実践的な開発スキルを習得しました。
                     </p>
                 </div>
             </div>
             
             <div class="card">
+                 <div class="video-container">
+                    <img src="bach.jpg" alt="学士研究のコンプライアントメカニズム" class="card-img">
+                </div>
                 <div class="card-content">
-                    <h3>学士研究：コンプライアントメカニズムを用いた画像ひずみ手法の開発</h3>
+                    <h3>学士研究：画像ひずみ手法の開発</h3>
                     <p>
-                        学士研究では、物体に加わった微小な力を、画像で捉えられるレベルまで大きく増幅する機構（コンプライアントメカニズム）の開発に取り組みました。この機構によって増幅された表面のひずみを、テンプレートマッチングという画像処理技術を用いて非接触で精密に計測する手法を確立。シミュレーションによる理論値と実験値を比較することで、開発した手法の妥当性を証明しました。
+                        微小な力を画像で捉えられるまで増幅する機構（コンプライアントメカニズム）を開発。画像処理技術を用いて非接触で精密に計測する手法を確立しました。
                     </p>
                 </div>
             </div>
@@ -216,15 +226,17 @@
         <div class="creations-grid">
             <div class="card">
                 <div class="video-container">
-                    </div>
+                    <img src="path/to/your/image.jpg" alt="画像認識仕分けロボット" class="card-img" style="background-color: #ccc;">
+                </div>
                 <div class="card-content">
                     <h3>画像認識仕分けロボット</h3>
-                    <p>ライントレース（線に沿って進む）機能に加え、カメラで捉えた犬または猫の画像を識別し、アームでそれぞれの場所に仕分けるロボットを制作しました。</p>
+                    <p>ライントレース機能に加え、カメラで捉えた犬または猫の画像を識別し、アームでそれぞれの場所に仕分けるロボットを制作しました。</p>
                 </div>
             </div>
             <div class="card">
                 <div class="video-container">
-                    </div>
+                    <img src="stand.jpg" alt="二輪倒立振子ロボット" class="card-img">
+                </div>
                 <div class="card-content">
                     <h3>二輪倒立振子ロボット</h3>
                     <p>ジャイロセンサーとモーターエンコーダーからの情報をもとに、倒立振子のモデルを構築。安定して自立走行するための制御システムを設計・実装しました。</p>
@@ -232,10 +244,11 @@
             </div>
             <div class="card">
                 <div class="video-container">
-                    </div>
+                    <img src="bike.PNG" alt="科学の甲子園ロボット" class="card-img">
+                </div>
                 <div class="card-content">
                     <h3>科学の甲子園：ジャイロ二輪ロボット</h3>
-                    <p>科学の甲子園山梨県大会で優勝した際に製作した、ジャイロ効果を利用して姿勢を安定させる特殊な二輪ロボットです。自律走行で課題達成を目指しました。</p>
+                    <p>科学の甲子園山梨県大会で優勝した際に製作した、ジャイロ効果を利用して姿勢を安定させる特殊な二輪ロボットです。</p>
                 </div>
             </div>
         </div>
