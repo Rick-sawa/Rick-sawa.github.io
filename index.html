@@ -1,338 +1,338 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rikuto Sawada - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2980b9;
-      --secondary-color: #2c3e50;
-      --bg-color: #f8f9fa;
-      --card-bg-color: #ffffff;
-      --text-color: #34495e;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rikuto Sawada - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2980b9;
+      --secondary-color: #2c3e50;
+      --bg-color: #f8f9fa;
+      --card-bg-color: #ffffff;
+      --text-color: #34495e;
+    }
 
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-      line-height: 1.9;
-      font-weight: 400;
-      font-size: 1rem;
-    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.9;
+      font-weight: 400;
+      font-size: 1rem;
+    }
 
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-    }
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+    }
 
-    h1, h2, h3, h4 {
-      font-weight: 700;
-      color: var(--secondary-color);
-    }
-    
-    h2 {
-      font-size: 2.2em;
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      color: var(--secondary-color);
+    }
+    
+    h2 {
+      font-size: 2.2em;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
 
-    h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: var(--primary-color);
-      margin: 15px auto 0;
-    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-color);
+      margin: 15px auto 0;
+    }
 
-    /* --- Header --- */
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 80px;
-    }
+    /* --- Header --- */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 80px;
+    }
 
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      border: 4px solid var(--card-bg-color);
-      margin-bottom: 20px;
-    }
-    
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0;
-    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 4px solid var(--card-bg-color);
+      margin-bottom: 20px;
+    }
+    
+    header h1 {
+      font-size: 3.2rem;
+      margin: 0;
+    }
 
-    /* --- Section & Card Layout --- */
-    section {
-        margin-bottom: 80px;
-    }
+    /* --- Section & Card Layout --- */
+    section {
+        margin-bottom: 80px;
+    }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    
-    .card {
-      background-color: var(--card-bg-color);
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .card {
+      background-color: var(--card-bg-color);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
 
-    .card-content {
-      padding: 30px;
-    }
+    .card-content {
+      padding: 30px;
+    }
 
-    .card-content h3 {
-      font-size: 1.6rem; 
-      margin-top: 0;
-      margin-bottom: 15px;
-      color: var(--primary-color);
-    }
-    
-    .card-content strong {
-        font-weight: 500;
-        color: var(--secondary-color);
-    }
+    .card-content h3 {
+      font-size: 1.6rem; 
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    
+    .card-content strong {
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
 
-    /* --- Media Containers (for video/image) --- */
-    .creations-grid, .experience-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-    }
+    /* --- Media Containers (for video/image) --- */
+    .creations-grid, .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
 
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-top: 75%; /* 4:3 Aspect Ratio for varied images */
-        background-color: #e9ecef;
-    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 Aspect Ratio for varied images */
+        background-color: #e9ecef;
+    }
 
-    .video-container iframe,
-    .card-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        object-fit: cover; /* 画像がコンテナにフィットするように調整 */
-    }
-    
-    /* --- Skills Section --- */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-    }
-    .skills-grid h4 {
-        font-size: 1.2em;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-    }
-    .skills-grid ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    .skills-grid li {
-        margin-bottom: 8px;
-    }
-    @media (max-width: 768px) {
-        /* スマホでは基準のフォントサイズを少し小さくしてバランスを取る */
-        html {
-            font-size: 15px;
-        }
+    .video-container iframe,
+    .card-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        object-fit: cover; /* 画像がコンテナにフィットするように調整 */
+    }
+    
+    /* --- Skills Section --- */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    .skills-grid h4 {
+        font-size: 1.2em;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+    .skills-grid ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .skills-grid li {
+        margin-bottom: 8px;
+    }
+    @media (max-width: 768px) {
+        /* スマホでは基準のフォントサイズを少し小さくしてバランスを取る */
+        html {
+            font-size: 15px;
+        }
 
-        /* コンテナの左右の余白を少し減らす */
-        .container {
-            padding: 10px;
-        }
+        /* コンテナの左右の余白を少し減らす */
+        .container {
+            padding: 10px;
+        }
 
-        /* 見出しが大きすぎるので、スマホ用に個別に調整 */
-        header h1 {
-            font-size: 2.5rem; /* 3.2remから縮小 */
-        }
+        /* 見出しが大きすぎるので、スマホ用に個別に調整 */
+        header h1 {
+            font-size: 2.5rem; /* 3.2remから縮小 */
+        }
 
-        h2 {
-            font-size: 1.8rem; /* 2.2remから縮小 */
-        }
+        h2 {
+            font-size: 1.8rem; /* 2.2remから縮小 */
+        }
 
-        .card-content h3 {
-            font-size: 1.4rem; /* 1.6remから縮小 */
-        }
+        .card-content h3 {
+            font-size: 1.4rem; /* 1.6remから縮小 */
+        }
 
-        .card-content {
-            padding: 20px; /* カード内の余白も少し調整 */
-        }
-    }
+        .card-content {
+            padding: 20px; /* カード内の余白も少し調整 */
+        }
+    }
 
 
-  </style>
+  </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="container">
 
-    <header>
-      <img src="me.jpg" alt="プロフィール写真" class="profile-img">
-      <h1>澤田 陸斗</h1>
-    </header>
+    <header>
+      <img src="me.jpg" alt="Profile Photo" class="profile-img">
+      <h1>Rikuto Sawada</h1>
+    </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
-        山梨県出身。東京科学大学大学院にて、医療CTにおける逆問題を研究しています。数理モデリングとシミュレーションを基盤とし、ベイズ推論などの統計的手法を用いて観測データから本質を捉えるアプローチに注力しています。海外でのソフトウェア開発インターンシップでは、統計学の知識を活かして自動車シミュレーションの評価指標を提案・実装するなど、理論を実践に繋げる経験を積みました。研究や開発で培った論理的思考力と実装能力を活かし、将来的にはデータサイエンティストやクオンツ、システム開発の領域で貢献したいと考えています。
-      </p>
-    </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
+        I am from Yamanashi, Japan, and currently studying **Inverse Problems in medical CT** at Tokyo Tech University Graduate School. My research focuses on using mathematical modeling, simulation, and statistical methods like Bayesian inference to understand the true physical phenomena from observed data. I also had a long-term internship as a software developer in Greece (BETA CAE Systems) for six months, where I applied my statistical knowledge to develop and implement a new metric for evaluating uncertainty in Monte Carlo simulations. In the future, I want to use my strong mathematical and implementation skills, gained from research and practical experience, to contribute to the **medical device industry**, specifically in the field of advanced medical imaging systems.
+      </p>
+    </section>
 
-    <section id="experience">
-        <h2>Experience & Research</h2>
-        <div class="experience-grid">
-            <div class="card">
-                <div class="video-container">
-                    <img src="shusi.png" alt="修士研究のイメージ" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>修士研究：医療CTにおける逆問題</h3>
-                    <p>
-                        近年、次世代型医療CTとしてフォトンカウンティングCTが注目されています。本研究では、フォトンカウンティングCTが抱える問題の一つである、「パルスパイルアップ」を逆問題のアプローチで解決することを目的としています。CTに使われている半導体中の物理現象を数理モデル化し、ベイズ推論・スパース推定などの統計的手法を使って高精度な推定を行っています。
-                    </p>
-                </div>
-            </div>
+    <section id="experience">
+        <h2>Experience & Research</h2>
+        <div class="experience-grid">
+            <div class="card">
+                <div class="video-container">
+                    <img src="shusi.png" alt="Image of Master's research" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Master's Research: Inverse Problems in Medical CT</h3>
+                    <p>
+                        Next-generation medical imaging, like Photon-Counting CT (PCCT), is becoming important. My research aims to solve one of the major problems of PCCT, called **"Pulse Pile-up"**, by using an inverse problem approach. Pulse pile-up happens when multiple photons are counted as one large-energy photon. I create a mathematical model for the physical process inside the semiconductor detector. Then, I use statistical techniques like Bayesian inference and sparse estimation to accurately estimate the original signal, which helps to improve the quality of the CT images.
+                    </p>
+                </div>
+            </div>
 
-            <div class="card">
-                <div class="video-container">
-                    <img src="intern.jpg" alt="BETA CAE Systemsでのインターンシップ" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>長期インターンシップ (BETA CAE Systems)</h3>
-                    <p>
-                        ギリシャにあるシミュレーションソフトウェア会社にて、半年間の長期インターンシップを経験しました。統計学の知識を活かし、モンテカルロシミュレーションの不確実性を評価する新たな指標を提案から実装まで担当しました。英語での議論やプレゼンテーションを日常的に行う環境で、実践的な開発スキルとコミュニケーション能力を磨きました。
-                    </p>
-                </div>
-            </div>
-            
-            <div class="card">
-                 <div class="video-container">
-                    <img src="bach.png" alt="学士研究のコンプライアントメカニズム" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>学士研究：画像ひずみ計測手法の開発</h3>
-                    <p>
-                        物体の表面に生じる、肉眼では捉えられないような微小なひずみを、非接触で精密に計測する手法を開発しました。この手法の核となるのは、ひずみを物理的に増幅させる特殊な機構（コンプライアントメカニズム）と、画像処理技術の組み合わせです。検証実験を通じて、本手法が測定精度の向上に有効であることを実証しました。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="card">
+                <div class="video-container">
+                    <img src="intern.jpg" alt="Internship at BETA CAE Systems" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Long-term Internship (BETA CAE Systems)</h3>
+                    <p>
+                        I worked as a software developer intern for six months at a simulation software company in Greece. I was responsible for proposing and implementing a new statistical metric to evaluate the uncertainty of Monte Carlo simulations. This international setting helped me improve my practical development skills and communication abilities, as I had to discuss and present my work in English daily.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                 <div class="video-container">
+                    <img src="bach.png" alt="Compliant mechanism from Bachelor's research" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Bachelor's Research: Development of Image-based Strain Measurement Method</h3>
+                    <p>
+                        I developed a non-contact method to precisely measure very small strains (deformations) on the surface of objects, which are too small to see with eyes. The key idea of this method is combining a special mechanism, called a **Compliant Mechanism** (which physically magnifies the strain), with image processing technology. Through experiments, I showed that this approach is effective for improving measurement accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="creations">
-        <h2>Projects</h2>
-        <div class="creations-grid">
-            <div class="card">
-                <div class="video-container">
-                    <img src="path/to/your/image.jpg" alt="画像認識仕分けロボット" class="card-img" style="background-color: #ccc;">
-                </div>
-                <div class="card-content">
-                    <h3>画像認識仕分けロボット</h3>
-                    <p>機械学習による画像認識と、古典制御によるライントレース技術を組み合わせ、特定の物体を自動で仕分けるロボットを開発しました。カメラが捉えた犬または猫の画像を識別した後、アームで対象物を掴み、ラインに沿って所定の場所まで自律走行し、正確に仕分けを行います</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="video-container">
-                    <img src="stand.jpg" alt="二輪倒立振子ロボット" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>二輪倒立振子ロボット</h3>
-                    <p>ジャイロセンサーで検知した機体の角速度と、モーターエンコーダーから得た走行情報を利用し、安定した倒立を保つPID制御システムを設計・実装しました。センサーの値を基に、倒れないための最適なモーター出力をリアルタイムに計算し、自立走行を実現しています。</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="video-container">
-                    <img src="bike.PNG" alt="科学の甲子園ロボット" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>ジャイロ二輪ロボット</h3>
-                    <p>科学の甲子園全国大会に山梨県代表として出場した際、制作した二輪ロボットです。このロボットは、一般的な二輪車とは異なり、高速回転させた円盤のジャイロ効果によって姿勢を安定させ、自立走行する点が最大の特徴です。独創的な機構設計と制御により、大会での高評価に繋がりました。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="card">
-            <div class="card-content">
-                <div class="skills-grid">
-                    <div>
-                        <h4>言語</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>MATLAB</li>
-                            <li>C</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>フレームワーク & ライブラリ</h4>
-                        <ul>
-                            <li>NumPy, Pandas, scikit-learn</li>
-                            <li>Matplotlib</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>ツール & プラットフォーム</h4>
-                        <ul>
-                            <li>GitHub</li>
-                            <li>Jupyter Notebook, VS Code</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>知識</h4>
-                        <ul>
-                            <li>数理モデリング・逆問題</li>
-                            <li>統計学</li>
-                            <li>機械学習</li>
-                            <li>数値シミュレーション</li>
-                            <li>制御工学</li>
-                        </ul>
-                    </div>
-                     <div>
-                        <h4>語学</h4>
-                        <ul>
-                            <li>日本語 (ネイティブ)</li>
-                            <li>英語 (ビジネスレベル)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="creations">
+        <h2>Projects</h2>
+        <div class="creations-grid">
+            <div class="card">
+                <div class="video-container">
+                    <img src="path/to/your/image.jpg" alt="Image Recognition Sorting Robot" class="card-img" style="background-color: #ccc;">
+                </div>
+                <div class="card-content">
+                    <h3>Image Recognition Sorting Robot</h3>
+                    <p>I developed a robot that automatically sorts specific objects by combining machine learning for image recognition and classical control for line tracing. The robot identifies a dog or cat from a camera image, then uses an arm to grasp the object, and drives autonomously along the line to the correct location for precise sorting.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="video-container">
+                    <img src="stand.jpg" alt="Two-Wheel Inverted Pendulum Robot" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Two-Wheel Inverted Pendulum Robot</h3>
+                    <p>I designed and implemented a **PID control** system that maintains stable inversion using the angular velocity from a gyro sensor and travel information from a motor encoder. It calculates the optimal motor output in real-time based on the sensor values to prevent falling, achieving autonomous self-balancing.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="video-container">
+                    <img src="bike.PNG" alt="Gyroscope Two-Wheel Robot" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Gyroscope Two-Wheel Robot</h3>
+                    <p>This two-wheel robot was created when I represented Yamanashi Prefecture in the Science Koshien National Competition. Unlike a typical two-wheeler, its key feature is that it uses the **gyro effect** of a high-speed rotating disk to maintain posture and achieve autonomous driving. The unique mechanical design and control led to a high evaluation in the competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="card">
+            <div class="card-content">
+                <div class="skills-grid">
+                    <div>
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>MATLAB</li>
+                            <li>C</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Frameworks & Libraries</h4>
+                        <ul>
+                            <li>NumPy, Pandas, scikit-learn</li>
+                            <li>Matplotlib</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Tools & Platforms</h4>
+                        <ul>
+                            <li>GitHub</li>
+                            <li>Jupyter Notebook, VS Code</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Knowledge</h4>
+                        <ul>
+                            <li>Mathematical Modeling / Inverse Problems</li>
+                            <li>Statistics</li>
+                            <li>Machine Learning</li>
+                            <li>Numerical Simulation</li>
+                            <li>Control Engineering</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4>Language Proficiency</h4>
+                        <ul>
+                            <li>Japanese (Native)</li>
+                            <li>English (Business Level)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
+  </div>
 </body>
 </html>
