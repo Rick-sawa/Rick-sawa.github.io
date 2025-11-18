@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,7 +140,7 @@
         width: 100%;
         height: 100%;
         border: none;
-        object-fit: cover;
+        object-fit: cover; /* 画像がコンテナにフィットするように調整 */
     }
     
     /* --- Skills Section --- */
@@ -163,25 +163,35 @@
         margin-bottom: 8px;
     }
     @media (max-width: 768px) {
+        /* スマホでは基準のフォントサイズを少し小さくしてバランスを取る */
         html {
             font-size: 15px;
         }
+
+        /* コンテナの左右の余白を少し減らす */
         .container {
             padding: 10px;
         }
+
+        /* 見出しが大きすぎるので、スマホ用に個別に調整 */
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* 3.2remから縮小 */
         }
+
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* 2.2remから縮小 */
         }
+
         .card-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.4rem; /* 1.6remから縮小 */
         }
+
         .card-content {
-            padding: 20px;
+            padding: 20px; /* カード内の余白も少し調整 */
         }
     }
+
+
   </style>
 </head>
 <body>
@@ -189,14 +199,14 @@
   <div class="container">
 
     <header>
-      <img src="me.jpg" alt="Profile Photo" class="profile-img">
-      <h1>Rikuto Sawada</h1>
+      <img src="me.jpg" alt="プロフィール写真" class="profile-img">
+      <h1>澤田 陸斗</h1>
     </header>
 
     <section id="about">
       <h2>About Me</h2>
       <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
-        I am from Yamanashi, Japan. Currently, I am a graduate student at Institute of Science Tokyo, researching inverse problems in medical CT. My research focuses on mathematical modeling and simulation, using statistical methods like Bayesian inference to extract information from observed data. I also experienced a software development internship in Greece, where I implemented statistical evaluation metrics for simulations. In the future, I want to contribute to the medical device industry by utilizing the mathematical knowledge and implementation skills I have gained.
+        山梨県出身。東京科学大学大学院にて、医療CTにおける逆問題を研究しています。数理モデリングとシミュレーションを基盤とし、ベイズ推論などの統計的手法を用いて観測データから本質を捉えるアプローチに注力しています。海外でのソフトウェア開発インターンシップでは、統計学の知識を活かして自動車シミュレーションの評価指標を提案・実装するなど、理論を実践に繋げる経験を積みました。研究や開発で培った論理的思考力と実装能力を活かし、将来的にはデータサイエンティストやクオンツ、システム開発の領域で貢献したいと考えています。
       </p>
     </section>
 
@@ -205,36 +215,36 @@
         <div class="experience-grid">
             <div class="card">
                 <div class="video-container">
-                    <img src="shusi.png" alt="Master's Research Image" class="card-img">
+                    <img src="shusi.png" alt="修士研究のイメージ" class="card-img">
                 </div>
                 <div class="card-content">
-                    <h3>Master's Research: Inverse Problems in Medical CT</h3>
+                    <h3>修士研究：医療CTにおける逆問題</h3>
                     <p>
-                        I am studying Photon Counting CT, a next-generation medical technology. A major problem with this technology is "Pulse Pile-up," where multiple light particles are counted as one. I solve this using an inverse problem approach. I model the physical movement of electrons in the semiconductor and use statistical methods (like Bayesian inference) to estimate the correct signals from the data.
+                        近年、次世代型医療CTとしてフォトンカウンティングCTが注目されています。本研究では、フォトンカウンティングCTが抱える問題の一つである、「パルスパイルアップ」を逆問題のアプローチで解決することを目的としています。CTに使われている半導体中の物理現象を数理モデル化し、ベイズ推論・スパース推定などの統計的手法を使って高精度な推定を行っています。
                     </p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="video-container">
-                    <img src="intern.jpg" alt="BETA CAE Systems Internship" class="card-img">
+                    <img src="intern.jpg" alt="BETA CAE Systemsでのインターンシップ" class="card-img">
                 </div>
                 <div class="card-content">
-                    <h3>Internship at BETA CAE Systems</h3>
+                    <h3>長期インターンシップ (BETA CAE Systems)</h3>
                     <p>
-                        I worked as a software developer intern for six months at a simulation software company in Greece. Using my statistics knowledge, I proposed and implemented a new metric to evaluate the uncertainty in Monte Carlo simulations. Working in an environment where English was the main language helped me improve my practical coding skills and communication ability.
+                        ギリシャにあるシミュレーションソフトウェア会社にて、半年間の長期インターンシップを経験しました。統計学の知識を活かし、モンテカルロシミュレーションの不確実性を評価する新たな指標を提案から実装まで担当しました。英語での議論やプレゼンテーションを日常的に行う環境で、実践的な開発スキルとコミュニケーション能力を磨きました。
                     </p>
                 </div>
             </div>
             
             <div class="card">
                  <div class="video-container">
-                    <img src="bach.png" alt="Bachelor's Research Image" class="card-img">
+                    <img src="bach.png" alt="学士研究のコンプライアントメカニズム" class="card-img">
                 </div>
                 <div class="card-content">
-                    <h3>Bachelor's Research: Strain Measurement Method</h3>
+                    <h3>学士研究：画像ひずみ計測手法の開発</h3>
                     <p>
-                        I developed a method to measure very small deformations (strain) on the surface of objects without touching them. The key idea was combining a special "compliant mechanism" (which physically magnifies the strain) with image processing. Experiments showed that this method effectively improves measurement accuracy.
+                        物体の表面に生じる、肉眼では捉えられないような微小なひずみを、非接触で精密に計測する手法を開発しました。この手法の核となるのは、ひずみを物理的に増幅させる特殊な機構（コンプライアントメカニズム）と、画像処理技術の組み合わせです。検証実験を通じて、本手法が測定精度の向上に有効であることを実証しました。
                     </p>
                 </div>
             </div>
@@ -246,29 +256,29 @@
         <div class="creations-grid">
             <div class="card">
                 <div class="video-container">
-                    <img src="path/to/your/image.jpg" alt="Sorting Robot" class="card-img" style="background-color: #ccc;">
+                    <img src="path/to/your/image.jpg" alt="画像認識仕分けロボット" class="card-img" style="background-color: #ccc;">
                 </div>
                 <div class="card-content">
-                    <h3>Image Recognition Sorting Robot</h3>
-                    <p>I developed a robot that sorts objects using machine learning and control engineering. The robot uses a camera to identify if an object is a dog or a cat, then uses an arm to pick it up and automatically drives along a line to the correct place.</p>
+                    <h3>画像認識仕分けロボット</h3>
+                    <p>機械学習による画像認識と、古典制御によるライントレース技術を組み合わせ、特定の物体を自動で仕分けるロボットを開発しました。カメラが捉えた犬または猫の画像を識別した後、アームで対象物を掴み、ラインに沿って所定の場所まで自律走行し、正確に仕分けを行います</p>
                 </div>
             </div>
             <div class="card">
                 <div class="video-container">
-                    <img src="stand.jpg" alt="Inverted Pendulum Robot" class="card-img">
+                    <img src="stand.jpg" alt="二輪倒立振子ロボット" class="card-img">
                 </div>
                 <div class="card-content">
-                    <h3>Two-Wheel Inverted Pendulum Robot</h3>
-                    <p>I designed a self-balancing robot using PID control. It uses a gyro sensor to detect tilt and a motor encoder to check speed. The system calculates the best motor output in real-time to keep the robot standing and moving stably.</p>
+                    <h3>二輪倒立振子ロボット</h3>
+                    <p>ジャイロセンサーで検知した機体の角速度と、モーターエンコーダーから得た走行情報を利用し、安定した倒立を保つPID制御システムを設計・実装しました。センサーの値を基に、倒れないための最適なモーター出力をリアルタイムに計算し、自立走行を実現しています。</p>
                 </div>
             </div>
             <div class="card">
                 <div class="video-container">
-                    <img src="bike.PNG" alt="Gyro Robot" class="card-img">
+                    <img src="bike.PNG" alt="科学の甲子園ロボット" class="card-img">
                 </div>
                 <div class="card-content">
-                    <h3>Gyroscope Two-Wheel Robot</h3>
-                    <p>I built this robot for the Science Koshien National Competition as a representative of Yamanashi Prefecture. Unlike normal bikes, it uses a fast-spinning disk (gyro effect) to keep its balance and drive automatically. The unique design was highly evaluated in the competition.</p>
+                    <h3>ジャイロ二輪ロボット</h3>
+                    <p>科学の甲子園全国大会に山梨県代表として出場した際、制作した二輪ロボットです。このロボットは、一般的な二輪車とは異なり、高速回転させた円盤のジャイロ効果によって姿勢を安定させ、自立走行する点が最大の特徴です。独創的な機構設計と制御により、大会での高評価に繋がりました。</p>
                 </div>
             </div>
         </div>
@@ -280,7 +290,7 @@
             <div class="card-content">
                 <div class="skills-grid">
                     <div>
-                        <h4>Languages</h4>
+                        <h4>言語</h4>
                         <ul>
                             <li>Python</li>
                             <li>MATLAB</li>
@@ -288,34 +298,34 @@
                         </ul>
                     </div>
                     <div>
-                        <h4>Frameworks & Libraries</h4>
+                        <h4>フレームワーク & ライブラリ</h4>
                         <ul>
                             <li>NumPy, Pandas, scikit-learn</li>
                             <li>Matplotlib</li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Tools & Platforms</h4>
+                        <h4>ツール & プラットフォーム</h4>
                         <ul>
                             <li>GitHub</li>
                             <li>Jupyter Notebook, VS Code</li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Knowledge</h4>
+                        <h4>知識</h4>
                         <ul>
-                            <li>Mathematical Modeling / Inverse Problems</li>
-                            <li>Statistics</li>
-                            <li>Machine Learning</li>
-                            <li>Numerical Simulation</li>
-                            <li>Control Engineering</li>
+                            <li>数理モデリング・逆問題</li>
+                            <li>統計学</li>
+                            <li>機械学習</li>
+                            <li>数値シミュレーション</li>
+                            <li>制御工学</li>
                         </ul>
                     </div>
-                      <div>
-                        <h4>Languages (Spoken)</h4>
+                     <div>
+                        <h4>語学</h4>
                         <ul>
-                            <li>Japanese (Native)</li>
-                            <li>English (Business Level)</li>
+                            <li>日本語 (ネイティブ)</li>
+                            <li>英語 (ビジネスレベル)</li>
                         </ul>
                     </div>
                 </div>
