@@ -1,328 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rikuto Sawada - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>ジョージの男磨き道場</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #2980b9;
-      --secondary-color: #2c3e50;
-      --bg-color: #f8f9fa;
-      --card-bg-color: #ffffff;
-      --text-color: #34495e;
-    }
-
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background: linear-gradient(to right, #ffd700, #ff69b4);
       margin: 0;
       padding: 0;
-      line-height: 1.9;
-      font-weight: 400;
-      font-size: 1rem;
+      color: #222;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    h1, h2, h3, h4 {
-      font-weight: 700;
-      color: var(--secondary-color);
-    }
-    
-    h2 {
-      font-size: 2.2em;
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: var(--primary-color);
-      margin: 15px auto 0;
-    }
-
-    /* --- Header --- */
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 80px;
+      text-align: center;
+      padding: 50px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
     }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
+    header img {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      border: 4px solid var(--card-bg-color);
+      border: 5px solid #fff;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 20px 0 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 30px;
+      background-color: #fff3cd;
+      font-weight: bold;
+    }
+    .video-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .video-card {
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .video-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .video-card h3 {
+      padding: 10px;
+      margin: 0;
+      background-color: #ffe4e1;
+      font-size: 1.1rem;
+    }
+    .contact-section {
+      background-color: #fffae6;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .contact-section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
     }
-    
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0;
+    .contact-section p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
-
-    /* --- Section & Card Layout --- */
-    section {
-        margin-bottom: 80px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    
-    .card {
-      background-color: var(--card-bg-color);
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .card-content {
-      padding: 30px;
-    }
-
-    .card-content h3 {
-      font-size: 1.6rem; 
-      margin-top: 0;
-      margin-bottom: 15px;
-      color: var(--primary-color);
-    }
-    
-    .card-content strong {
-        font-weight: 500;
-        color: var(--secondary-color);
-    }
-
-    /* --- Media Containers (for video/image) --- */
-    .creations-grid, .experience-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-    }
-
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-top: 75%; /* 4:3 Aspect Ratio for varied images */
-        background-color: #e9ecef;
-    }
-
-    .video-container iframe,
-    .card-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        object-fit: cover;
-    }
-    
-    /* --- Skills Section --- */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-    }
-    .skills-grid h4 {
-        font-size: 1.2em;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-    }
-    .skills-grid ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    .skills-grid li {
-        margin-bottom: 8px;
-    }
-    @media (max-width: 768px) {
-        html {
-            font-size: 15px;
-        }
-        .container {
-            padding: 10px;
-        }
-        header h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 1.8rem;
-        }
-        .card-content h3 {
-            font-size: 1.4rem;
-        }
-        .card-content {
-            padding: 20px;
-        }
+    footer {
+      text-align: center;
+      background-color: #fce4ec;
+      padding: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="george4.jpg" alt="ジョージの自撮り">
+    <h1>ジョージの男磨き道場</h1>
+    <p>男、磨いてる？ 今すぐ変われ！</p>
+  </header>
 
-  <div class="container">
-
-    <header>
-      <img src="me.jpg" alt="Profile Photo" class="profile-img">
-      <h1>Rikuto Sawada</h1>
-    </header>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
-        I am from Yamanashi, Japan. Currently, I am a graduate student at Institute of Science Tokyo, researching inverse problems in medical CT. My research focuses on mathematical modeling and simulation, using statistical methods like Bayesian inference to extract information from observed data. I also experienced a software development internship in Greece, where I implemented statistical evaluation metrics for simulations. In the future, I want to contribute to the medical device industry by utilizing the mathematical knowledge and implementation skills I have gained.
-      </p>
-    </section>
-
-    <section id="experience">
-        <h2>Experience & Research</h2>
-        <div class="experience-grid">
-            <div class="card">
-                <div class="video-container">
-                    <img src="shusi.png" alt="Master's Research Image" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>Master's Research: Inverse Problems in Medical CT</h3>
-                    <p>
-                        I am studying Photon Counting CT, a next-generation medical technology. A major problem with this technology is "Pulse Pile-up," where multiple light particles are counted as one. I solve this using an inverse problem approach. I model the physical movement of electrons in the semiconductor and use statistical methods (like Bayesian inference) to estimate the correct signals from the data.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="video-container">
-                    <img src="intern.jpg" alt="BETA CAE Systems Internship" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>Internship at BETA CAE Systems</h3>
-                    <p>
-                        I worked as a software developer intern for six months at a simulation software company in Greece. Using my statistics knowledge, I proposed and implemented a new metric to evaluate the uncertainty in Monte Carlo simulations. Working in an environment where English was the main language helped me improve my practical coding skills and communication ability.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="card">
-                 <div class="video-container">
-                    <img src="bach.png" alt="Bachelor's Research Image" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>Bachelor's Research: Strain Measurement Method</h3>
-                    <p>
-                        I developed a method to measure very small deformations (strain) on the surface of objects without touching them. The key idea was combining a special "compliant mechanism" (which physically magnifies the strain) with image processing. Experiments showed that this method effectively improves measurement accuracy.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="creations">
-        <h2>Projects</h2>
-        <div class="creations-grid">
-            <div class="card">
-                <div class="video-container">
-                    <img src="path/to/your/image.jpg" alt="Sorting Robot" class="card-img" style="background-color: #ccc;">
-                </div>
-                <div class="card-content">
-                    <h3>Image Recognition Sorting Robot</h3>
-                    <p>I developed a robot that sorts objects using machine learning and control engineering. The robot uses a camera to identify if an object is a dog or a cat, then uses an arm to pick it up and automatically drives along a line to the correct place.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="video-container">
-                    <img src="stand.jpg" alt="Inverted Pendulum Robot" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>Two-Wheel Inverted Pendulum Robot</h3>
-                    <p>I designed a self-balancing robot using PID control. It uses a gyro sensor to detect tilt and a motor encoder to check speed. The system calculates the best motor output in real-time to keep the robot standing and moving stably.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="video-container">
-                    <img src="bike.PNG" alt="Gyro Robot" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3>Gyroscope Two-Wheel Robot</h3>
-                    <p>I built this robot for the Science Koshien National Competition as a representative of Yamanashi Prefecture. Unlike normal bikes, it uses a fast-spinning disk (gyro effect) to keep its balance and drive automatically. The unique design was highly evaluated in the competition.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="card">
-            <div class="card-content">
-                <div class="skills-grid">
-                    <div>
-                        <h4>Languages</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>MATLAB</li>
-                            <li>C</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Frameworks & Libraries</h4>
-                        <ul>
-                            <li>NumPy, Pandas, scikit-learn</li>
-                            <li>Matplotlib</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Tools & Platforms</h4>
-                        <ul>
-                            <li>GitHub</li>
-                            <li>Jupyter Notebook, VS Code</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Knowledge</h4>
-                        <ul>
-                            <li>Mathematical Modeling / Inverse Problems</li>
-                            <li>Statistics</li>
-                            <li>Machine Learning</li>
-                            <li>Numerical Simulation</li>
-                            <li>Control Engineering</li>
-                        </ul>
-                    </div>
-                      <div>
-                        <h4>Languages (Spoken)</h4>
-                        <ul>
-                            <li>Japanese (Native)</li>
-                            <li>English (Business Level)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  <div class="hero">
+    【無料電話相談受付中！今すぐお電話を！】  📞 090-1234-5678<br>
+    あなたの "本気の覚悟" を聞かせてくれ。
   </div>
+
+  <section class="video-section">
+    <h2>🔥 ジョージの男磨き動画 🔥</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <img src="george1.jpg" alt="動画サムネイル1">
+        <h3>限界筋トレ1000回チャレンジ！</h3>
+      </div>
+      <div class="video-card">
+        <img src="george2.jpg" alt="動画サムネイル2">
+        <h3>朝4時起きルーティン公開！</h3>
+      </div>
+      <div class="video-card">
+        <img src="george3.jpg" alt="動画サムネイル3">
+        <h3>男の美容道！肌も磨け！</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>💪 男磨きサービス実施中 💪</h2>
+    <p>・筋トレ指導（初心者〜上級者）</p>
+    <p>・朝活＆メンタル強化コーチング</p>
+    <p>・スキンケア＆外見改善アドバイス</p>
+    <p>・人生相談、なんでも聞くぜ！</p>
+    <p style="margin-top: 20px; font-weight: bold;">「変わるなら今しかない。」</p>
+  </section>
+
+  <footer>
+    powered by <a href="https://gptonline.ai/">GPTOnline.ai</a>｜男磨きは1日にしてならず
+  </footer>
 </body>
 </html>
