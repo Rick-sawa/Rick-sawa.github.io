@@ -13,6 +13,11 @@
       padding: 0;
       color: #222;
     }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
     header {
       text-align: center;
       padding: 50px 20px;
@@ -20,7 +25,7 @@
     }
     header img {
       width: 220px;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid #fff;
@@ -57,7 +62,7 @@
     }
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 30px;
       margin-top: 30px;
     }
@@ -66,29 +71,52 @@
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      height: 340px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 10px;
+      padding: 20px;
     }
     .video-card img {
-        width: auto;
-        height: 200px;
-        max-width: 100%;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-        }
+      height: auto;
+      max-height: 300px;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 15px;
+    }
     .video-card h3 {
       font-family: 'Kaushan Script', cursive;
-      padding: 10px;
-      margin: 10px 0 0;
       background-color: #ffe4e1;
       font-size: 1rem;
       color: #cc0066;
+      padding: 10px;
       border-radius: 8px;
+    }
+    .before-after {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 60px 0;
+    }
+    .before-after h2 {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 2.5rem;
+      color: #cc0066;
+      text-shadow: 1px 1px 1px #fff;
+      margin-bottom: 20px;
+    }
+    .before-after-images {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .before-after-images img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
     .contact-section {
       background-color: #fffae6;
@@ -113,45 +141,56 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="george4.jpg" alt="ジョージの自撮り">
-    <h1>ジョージの男磨き道場</h1>
-    <p>男、磨いてる？ 磨いてないやつ危機感持った方がいいって</p>
-  </header>
+  <div class="container">
+    <header>
+      <img src="george4.jpg" alt="ジョージの自撮り">
+      <h1>ジョージの男磨き道場</h1>
+      <p>男、磨いてる？ 磨いてないやつ危機感持った方がいいって</p>
+    </header>
 
-  <div class="hero">
-    【無料電話相談受付中！】  📞 090-2929-2929<br>
-    お前の本気の覚悟、聞かせてくれ。
-  </div>
-
-  <section class="video-section">
-    <h2>🔥 ジョージの男磨き動画 🔥</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <img src="george1.jpg" alt="動画サムネイル1">
-        <h3>「上位1%の男」とそれ以外の雑魚との差は残酷な程にまでも広がる。</h3>
-      </div>
-      <div class="video-card">
-        <img src="george2.jpg" alt="動画サムネイル2">
-        <h3>Monk Mode - Top1%になるための究極のルーティーン</h3>
-      </div>
-      <div class="video-card">
-        <img src="george3.jpg" alt="動画サムネイル3">
-        <h3>お前が女になめられる理由</h3>
-      </div>
+    <div class="hero">
+      【無料電話相談受付中！】 📞 090-2929-2929<br>
+      お前の本気の覚悟、聞かせてくれ。
     </div>
-  </section>
 
-  <section class="contact-section">
-    <h2> 男磨きサービス実施中 </h2>
-    <p>・筋トレ指導（初心者〜上級者）</p>
-    <p>・メンタル強化コーチング</p>
-    <p>・フレイル診断</p>
-    <p style="margin-top: 20px; font-weight: bold;">「変わるなら今しかない。」</p>
-  </section>
+    <section class="before-after">
+      <h2>🔥 たった1ヶ月でこの変化 🔥</h2>
+      <div class="before-after-images">
+        <img src="george5.jpg" alt="1か月前のジョージ">
+        <p>⬇️ 1ヶ月後 ⬇️</p>
+        <img src="george4.jpg" alt="1か月後のジョージ">
+      </div>
+    </section>
 
-  <footer>
-    男磨きは1日にしてならず
-  </footer>
+    <section class="video-section">
+      <h2>💥 ジョージの男磨き動画 💥</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <img src="george1.jpg" alt="動画サムネイル1">
+          <h3>「上位1%の男」とそれ以外の雑魚との差は残酷な程にまでも広がる。</h3>
+        </div>
+        <div class="video-card">
+          <img src="george2.jpg" alt="動画サムネイル2">
+          <h3>Monk Mode - Top1%になるための究極のルーティーン</h3>
+        </div>
+        <div class="video-card">
+          <img src="george3.jpg" alt="動画サムネイル3">
+          <h3>お前が女になめられる理由右</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>💪 男磨きサービス実施中 💪</h2>
+      <p>・筋トレ指導（初心者〜上級者）</p>
+      <p>・メンタル強化コーチング</p>
+      <p>・フレイル診断</p>
+      <p style="margin-top: 20px; font-weight: bold;">「変わるなら今しかない。」</p>
+    </section>
+
+    <footer>
+      男磨きは1日にしてならず｜powered by <a href="https://gptonline.ai/">GPTOnline.ai</a>
+    </footer>
+  </div>
 </body>
 </html>
